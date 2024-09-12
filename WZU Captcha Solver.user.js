@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WZU Captcha Solver (Grayscale Preprocessing)
 // @namespace    http://tampermonkey.net/
-// @version      1.8
+// @version      1.9
 // @downloadURL  https://github.com/icercat/wzu-captcha/raw/main/WZU%20Captcha%20Solver.user.js
 // @description  A script to solve captchas on WZU portal with grayscale preprocessing to improve OCR accuracy
 // @author       Icercat
@@ -87,7 +87,12 @@
                         recognizedText = recognizedText.replace(/[^a-z0-9]/g, '');
 
                         // Ensure only one character is stored (in case OCR returns multiple characters)
-                        const singleCharacter = recognizedText.charAt(0);
+                        let singleCharacter = recognizedText.charAt(0);
+
+                        // If Tesseract returns null or an empty string, replace it with 'r'
+                        if (!singleCharacter) {
+                            singleCharacter = 'r';
+                        }
 
                         console.log(`Recognized text for image ${index + 1}:`, singleCharacter);
 
