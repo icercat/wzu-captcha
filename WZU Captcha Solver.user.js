@@ -2,7 +2,7 @@
 // @name         WZU Captcha Solver (Grayscale Preprocessing)
 // @namespace    http://tampermonkey.net/
 // @version      1.8
-// @downloadURL 
+// @downloadURL  https://github.com/icercat/wzu-captcha/raw/main/WZU%20Captcha%20Solver.user.js
 // @description  A script to solve captchas on WZU portal with grayscale preprocessing to improve OCR accuracy
 // @author       Icercat
 // @match        https://sso.wzu.edu.tw/Portal/login.htm
