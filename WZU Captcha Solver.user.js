@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         WZU Captcha Solver (Grayscale Preprocessing)
 // @namespace    http://tampermonkey.net/
-// @version      1.7
+// @version      1.8
+// @downloadURL 
 // @description  A script to solve captchas on WZU portal with grayscale preprocessing to improve OCR accuracy
-// @author       Your Name
+// @author       Icercat
 // @match        https://sso.wzu.edu.tw/Portal/login.htm
 // @require      https://cdn.jsdelivr.net/npm/tesseract.js@5.0.1/dist/tesseract.min.js
 // @grant        none
@@ -127,6 +128,6 @@
 
     // Wait for the page to load fully and then wait for 1 second before running the solveCaptcha function
     window.onload = () => {
-        setTimeout(solveCaptcha, 1000);  // 1000 milliseconds = 1 second
+        setTimeout(solveCaptcha, 500);  // 1000 milliseconds = 1 second
     };
 })();
